@@ -1,24 +1,24 @@
-
 /**
  * https://github.com/jhupo
+ * {key,rules,values}
  * rules:[forward] 
  */
 
-const defaults = "https://jhupo.cc/";
+const defaults = "https://jhupo.cc";
 
 const urls = [
-    ["blog",${defaults}]
+    ["blog", "${defaults}"]
 ];
 
 addEventListener('fetch', event => { event.respondWith(handleRequest(event.request)) })
 
-async function forwardMessage(url){
+async function forwardMessage(url) {
     return new Response(null, {
         status: 301,
         headers: {
-          'Location': url,
-         },
-      });
+            'Location': url,
+        },
+    });
 }
 
 async function handleRequest(request) {
@@ -26,7 +26,7 @@ async function handleRequest(request) {
     const path = url.pathname;
     const target = path.substring(1);
     const valid = urls.find(item => item[0] === target);
-    if(valid){
+    if (valid) {
         return forwardMessage(valid[1]);
     }
     return forwardMessage(defaults);
