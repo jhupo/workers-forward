@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 10px;
+  letter-spacing: 0.01rem;
+  background-color: var(--bg-body);
+  transition: color 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
+  font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+}
+
+body.hidden {
+  overflow: hidden;
+  padding-right: 6px;
+}
+
+#app {
+  position: relative;
+  margin: 0 auto;
+}
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 6px;
+    height: 6px;
+    background-clip: padding-box;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144,147,153,.5);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a4a4a4;
+}
+
+a {
+  color: var(--color-text-a);
+  text-decoration: none;
+  background-color: transparent;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-text-a-hover);
+}
